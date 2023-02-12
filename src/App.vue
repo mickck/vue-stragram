@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <div class="slider-bar"></div>
+    <div class="left-bar"></div>
+    <MainBoard></MainBoard>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainBoard from "./components/MainBoard.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
+  data() {
+    return {};
+  },
   components: {
-    HelloWorld
-  }
-}
+    MainBoard,
+  },
+
+  methods() {},
+  mounted() {
+    this.$store.dispatch("getStaData");
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+body {
+  margin: 0px;
+}
+.slider-bar {
+  padding-top: 20px;
+  background-color: black;
+}
+.wrapper {
+  display: flex;
+}
+
+.left-bar {
+  float: left;
+  background-color: cornflowerblue;
+  width: 335px;
+  height: 100vh;
+  left: 0;
+  padding: 20px;
 }
 </style>
