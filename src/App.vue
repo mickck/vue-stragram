@@ -1,8 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="slider-bar"></div>
+    <!-- <div class="slider-bar"></div> -->
     <div class="left-bar"></div>
-    <MainBoard></MainBoard>
+    <div class="right-bar"></div>
+    <div class="content"><MainBoard></MainBoard></div>
   </div>
 </template>
 
@@ -28,22 +29,56 @@ export default {
 
 <style lang="scss">
 body {
-  margin: 0px;
+  margin: 0;
+  p {
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+  }
 }
 .slider-bar {
-  padding-top: 20px;
+  padding-top: 50px;
   background-color: black;
+  // width: 1000px;
 }
 .wrapper {
-  display: flex;
 }
 
 .left-bar {
-  float: left;
+  position: absolute;
   background-color: cornflowerblue;
   width: 335px;
   height: 100vh;
   left: 0;
-  padding: 20px;
+}
+.content {
+  top: 0;
+}
+.right-bar {
+  position: absolute;
+  background-color: crimson;
+  width: 335px;
+  height: 100vh;
+  right: 100px;
+}
+
+@media (max-width: 1400px) {
+  .right-bar {
+    display: none;
+  }
+  .left-bar {
+    width: 250px;
+  }
+}
+@media (max-width: 1000px) {
+  .left-bar {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .slider-bar {
+    display: none;
+  }
 }
 </style>
