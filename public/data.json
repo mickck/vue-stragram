@@ -2,7 +2,7 @@
     {
     "id": 0,
     "name": "Manny",
-    "userImage": "https://picsum.photos/100/",
+    "userImage": "https://picsum.photos/100/?image=18",
     "postImage": "https://picsum.photos/640/480/?image=100",
     "likes": 100,
     "date": "30/12/22",
@@ -13,7 +13,7 @@
  {
     "id": 1,
     "name": "Sophie",
-    "userImage": "https://picsum.photos/100/",
+    "userImage": "https://picsum.photos/100/?image=123",
     "postImage": "https://picsum.photos/640/480/?image=120",
     "likes": 20,
     "date": "12/02/23",
@@ -24,7 +24,7 @@
   {
     "id": 2,
     "name": "James",
-    "userImage": "https://picsum.photos/100/",
+    "userImage": "https://picsum.photos/100/?image=12",
     "postImage": "https://picsum.photos/640/480/?image=130",
     "likes": 18,
     "date": "12/02/23",

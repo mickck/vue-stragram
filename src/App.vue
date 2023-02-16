@@ -30,6 +30,8 @@ export default {
 <style lang="scss">
 body {
   margin: 0;
+  width: 100%;
+  height: 100%;
   p {
     margin: 0;
   }
@@ -42,6 +44,7 @@ body {
   background-color: black;
   // width: 1000px;
 }
+
 .wrapper {
 }
 
@@ -65,7 +68,9 @@ body {
 
 @media (max-width: 1400px) {
   .right-bar {
+    position: static;
     display: none;
+    width: 0;
   }
   .left-bar {
     width: 250px;
@@ -74,11 +79,12 @@ body {
 @media (max-width: 1000px) {
   .left-bar {
     display: none;
+    width: 0;
   }
 }
 @media (max-width: 500px) {
   .slider-bar {
-    display: none;
+    // display: none;
   }
 }
 </style>

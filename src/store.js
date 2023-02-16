@@ -6,11 +6,23 @@ const store = createStore({
     return {
       name: "Mike Kim",
       vuestaData: [],
+      originVuestaData: [],
     };
   },
   mutations: {
     setStaData(state, data) {
-      state.vuestaData = data;
+      state.originVuestaData = data;
+      state.vuestaData = [...state.originVuestaData];
+    },
+    // Clicked what you like if click  Likes increasing +1 clicked again decrease -1
+    setLikes(state, payload) {
+      if (!payload.vuesta.liked) {
+        payload.vuesta.likes += 1;
+        payload.vuesta.liked = true;
+      } else if (payload.vuesta.liked) {
+        payload.vuesta.likes -= 1;
+        payload.vuesta.liked = false;
+      }
     },
   },
 
@@ -19,7 +31,6 @@ const store = createStore({
       try {
         const response = await axios.get("/data.json");
         let data = await response.data;
-
         this.commit("setStaData", data);
       } catch (err) {
         console.log(err);

@@ -1,34 +1,43 @@
 <template>
   <div class="mainWrapper">
-    <div class="slider">
-      <img src="../assets/logo.png" class="vue-logo" />
-      <h1>Slider Part</h1>
-      <h2 class="vue-logo-font">Vuestagram</h2>
+    <div class="slider-wrapper">
+      <div class="slider">
+        <img src="../assets/logo.png" class="vue-logo" />
+        <h1>Slider Part</h1>
+        <h2 class="vue-logo-font">Vuestagram</h2>
+      </div>
     </div>
     <div class="card-wrapper">
-      <div v-for="(a, i) in vuestaData" :key="i" class="card">
+      <div v-for="(vuesta, i) in vuestaData" :key="i" class="card">
         <div class="card-nav">
-          <img class="user-image" :src="`${a.userImage}`" />
-          <p>{{ a.name }}</p>
+          <img class="user-image" :src="`${vuesta.userImage}`" />
+          <p>{{ vuesta.name }}</p>
         </div>
-        <img class="post-image" :src="`${a.postImage}`" />
+        <img class="post-image" :src="`${vuesta.postImage}`" />
+        <div>
+          <p class="post-content">{{ vuesta.content }}</p>
+        </div>
         <div class="emoticons">
+          <!-- heart likes -->
           <p class="emoticon">
             <svg
+              @click="$store.commit('setLikes', { vuesta })"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              :fill="vuesta.liked ? 'red' : 'none'"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="currentColor"
+              :stroke="vuesta.liked ? 'red' : 'currentColor'"
               class="w-6 h-6"
+              :class="vuesta.liked ? ' ' : 'emoticon-active'"
             >
+              <!-- :stroke-width="vuesta.liked ? '3' : '1.5'" -->
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
               />
             </svg>
-            <span> {{ a.likes }}</span>
+            <span> {{ vuesta.likes }}</span>
           </p>
           <p class="emoticon">
             <svg
@@ -99,6 +108,10 @@ export default {
   width: 468px;
   border-radius: 3px;
 }
+.post-content {
+  color: #222222fb;
+  padding: 4px;
+}
 .slider {
   background: lightgreen;
   padding: 15px;
@@ -123,6 +136,7 @@ export default {
 }
 .emoticons {
   display: flex;
+  cursor: pointer;
   .emoticon {
     display: flex;
     align-items: center;
@@ -135,6 +149,22 @@ export default {
 
     &:hover {
       color: #9ca3af;
+    }
+  }
+}
+.emoticon-active {
+  &:active {
+    animation: mm 0.7s;
+    -webkit-animation: mm 0.7s;
+    @keyframes mm {
+      25% {
+        transform: scale(1.3, 1.3);
+      }
+    }
+    @-webkit-keyframes mm {
+      25% {
+        -webkit-transform: scale(1.3, 1.3);
+      }
     }
   }
 }
@@ -168,6 +198,7 @@ export default {
   .mainWrapper {
     padding: 0;
     max-width: 100%;
+    width: 100%;
   }
   .card-wrapper {
     padding: 0;
@@ -176,10 +207,11 @@ export default {
     max-width: 100%;
     height: auto;
   }
-  .slider {
+  .slider-wrapper {
+    display: flex;
+    width: 100vw;
+    margin: 0 auto;
     justify-content: center;
-    max-width: 100%;
-    // display: none;
   }
 }
 </style>
