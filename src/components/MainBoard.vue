@@ -37,7 +37,7 @@
                 d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
               />
             </svg>
-            <span> {{ vuesta.likes }}</span>
+            <span style="user-select: none"> {{ vuesta.likes }}</span>
           </p>
           <p class="emoticon">
             <svg
@@ -75,8 +75,11 @@
       </div>
     </div>
   </div>
+  <ModalCard />
 </template>
 <script>
+import ModalCard from "./ModalBoard.vue";
+
 export default {
   name: "MainBoard",
   computed: {
@@ -84,21 +87,25 @@ export default {
       return this.$store.state.vuestaData;
     },
   },
+  components: {
+    ModalCard,
+  },
 };
 </script>
 <style lang="scss">
 .mainWrapper {
   margin: 0 auto;
   max-width: 470px;
-  // background-color: chocolate;
+  width: 100%;
   height: 100vh;
 }
 .card-nav {
   display: flex;
   align-items: center;
-  padding-bottom: 6px;
+  padding-bottom: 17px;
 }
 .user-image {
+  margin-left: 10px;
   width: 35px;
   height: 35px;
   border-radius: 99px;
@@ -134,19 +141,21 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 .emoticons {
   display: flex;
-  cursor: pointer;
+
   .emoticon {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   svg {
     width: 24px;
     height: 24px;
     padding: 8px;
-
+    cursor: pointer;
     &:hover {
       color: #9ca3af;
     }
@@ -191,20 +200,20 @@ export default {
 }
 @media (max-width: 500px) {
   img {
-    max-width: 100%;
+    // width: 95%;
     height: auto;
   }
 
   .mainWrapper {
     padding: 0;
-    max-width: 100%;
-    width: 100%;
+
+    // width: 100%;
   }
   .card-wrapper {
     padding: 0;
   }
   .post-image {
-    max-width: 100%;
+    max-width: fit-content;
     height: auto;
   }
   .slider-wrapper {

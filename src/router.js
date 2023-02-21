@@ -3,6 +3,7 @@ import App from "/src/App.vue";
 
 const routes = [
   { path: "/", component: App },
+
   {
     path: "/*",
     component: App,

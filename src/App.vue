@@ -1,14 +1,21 @@
 <template>
   <div class="wrapper">
     <!-- <div class="slider-bar"></div> -->
-    <div class="left-bar"></div>
-    <div class="right-bar"></div>
-    <div class="content"><MainBoard></MainBoard></div>
+    <div class="left-bar">
+      <LeftBar></LeftBar>
+    </div>
+    <div class="right-bar">
+      <h1>User</h1>
+    </div>
+    <div class="content">
+      <MainBoard></MainBoard>
+    </div>
   </div>
 </template>
 
 <script>
 import MainBoard from "./components/MainBoard.vue";
+import LeftBar from "./components/LeftBar.vue";
 
 export default {
   name: "App",
@@ -18,6 +25,7 @@ export default {
   },
   components: {
     MainBoard,
+    LeftBar,
   },
 
   methods() {},
@@ -44,26 +52,28 @@ body {
   background-color: black;
   // width: 1000px;
 }
-
-.wrapper {
-}
-
 .left-bar {
-  position: absolute;
-  background-color: cornflowerblue;
+  position: fixed;
+  background-color: rgb(252, 252, 255);
   width: 335px;
   height: 100vh;
   left: 0;
+  border-right: #dbdbdb solid 1px;
+  padding-top: 40px;
 }
+
 .content {
   top: 0;
+  margin: 0;
+  padding: 0;
 }
 .right-bar {
-  position: absolute;
-  background-color: crimson;
+  position: fixed;
+  // background-color: crimson;
   width: 335px;
   height: 100vh;
   right: 100px;
+  z-index: 99;
 }
 
 @media (max-width: 1400px) {

@@ -7,6 +7,36 @@ const store = createStore({
       name: "Mike Kim",
       vuestaData: [],
       originVuestaData: [],
+      step: 0,
+      imageUrl: "",
+      instaFilterName: [
+        "aden",
+        "_1977",
+        "brannan",
+        "brooklyn",
+        "clarendon",
+        "earlybird",
+        "gingham",
+        "hudson",
+        "inkwell",
+        "kelvin",
+        "lark",
+        "lofi",
+        "maven",
+        "mayfair",
+        "moon",
+        "nashville",
+        "perpetua",
+        "reyes",
+        "rise",
+        "slumber",
+        "stinson",
+        "toaster",
+        "valencia",
+        "walden",
+        "willow",
+        "xpro2",
+      ],
     };
   },
   mutations: {
@@ -24,6 +54,15 @@ const store = createStore({
         payload.vuesta.liked = false;
       }
     },
+    //move to Nextstep
+    setNextStep(state, payload) {
+      state.step = payload;
+      // console.log(state.step);
+    },
+    //getImage, go to the filter Card
+    // setUploadImage(state, payload) {
+
+    // }
   },
 
   actions: {
