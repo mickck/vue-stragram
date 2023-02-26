@@ -56,16 +56,16 @@ const store = createStore({
     },
     //move to Nextstep
     setNextStep(state, payload) {
-      if (state.step == 1 && (payload.image == null || payload.image == "")) {
-        return alert("Please upload an image.");
-      }
       state.step = payload;
       // console.log(state.step);
     },
-    //getImage, go to the filter Card,post
-    // setUploadImage(state, payload) {
-
-    // }
+    // getImage, go to the filter Card,post
+    setUploadImage(state, payload) {
+      if (state.step == 1 && (payload.image == null || payload.image == "")) {
+        return alert("Please upload an Image.");
+      }
+      state.step = payload.stepNumber;
+    },
     setPost(state, payload) {
       const today = new Date();
       const date =

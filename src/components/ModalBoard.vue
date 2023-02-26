@@ -31,7 +31,7 @@
         <span class="modal-create-font">Create new post</span>
         <p
           @click="
-            $store.commit('setNextStep', { stepNumber: 1, image: imageUrl })
+            $store.commit('setUploadImage', { stepNumber: 1, image: imageUrl })
           "
         >
           Next
