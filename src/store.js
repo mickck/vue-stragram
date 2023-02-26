@@ -56,13 +56,43 @@ const store = createStore({
     },
     //move to Nextstep
     setNextStep(state, payload) {
+      if (state.step == 1 && (payload.image == null || payload.image == "")) {
+        return alert("Please upload an image.");
+      }
       state.step = payload;
       // console.log(state.step);
     },
-    //getImage, go to the filter Card
+    //getImage, go to the filter Card,post
     // setUploadImage(state, payload) {
 
     // }
+    setPost(state, payload) {
+      const today = new Date();
+      const date =
+        today.getDate() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear();
+
+      const dateTime = date;
+      const timestamp = dateTime;
+      if (payload.postText == "" || payload.postText == null) {
+        return alert("Please type your content.");
+      }
+      state.vuestaData.push({
+        id: state.vuestaData.length,
+        name: "Mick",
+        userImage: "https://picsum.photos/100/?image=18",
+        postImage: payload.imageUrl,
+        likes: 0,
+        date: timestamp,
+        liked: false,
+        content: payload.postText,
+        filter: payload.filter,
+      });
+      state.step = 0;
+    },
   },
 
   actions: {

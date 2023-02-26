@@ -4,9 +4,7 @@
     <div class="left-bar">
       <LeftBar></LeftBar>
     </div>
-    <div class="right-bar">
-      <h1>User</h1>
-    </div>
+    <div class="right-bar"></div>
     <div class="content">
       <MainBoard></MainBoard>
     </div>

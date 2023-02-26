@@ -3,7 +3,7 @@
     <div class="slider-wrapper">
       <div class="slider">
         <img src="../assets/logo.png" class="vue-logo" />
-        <h1>Slider Part</h1>
+        <h1>Vuestagram</h1>
         <h2 class="vue-logo-font">Vuestagram</h2>
       </div>
     </div>
@@ -72,6 +72,7 @@
             </svg>
           </p>
         </div>
+        <p class="post-date">{{ vuesta.date }}</p>
       </div>
     </div>
   </div>
@@ -84,7 +85,8 @@ export default {
   name: "MainBoard",
   computed: {
     vuestaData() {
-      return this.$store.state.vuestaData;
+      let vuestaData = this.$store.state.vuestaData;
+      return vuestaData.sort((a, b) => b.id - a.id);
     },
   },
   components: {
@@ -120,7 +122,7 @@ export default {
   padding: 4px;
 }
 .slider {
-  background: lightgreen;
+  // background: lightgreen;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -181,6 +183,11 @@ export default {
   border-bottom: #dbdbdb solid 1px;
   padding-top: 50px;
   padding-bottom: 20px;
+}
+.post-date {
+  font-size: 10px;
+  margin-left: 10px;
+  color: #9ca3af;
 }
 @media (max-width: 1000px) {
   .slider {

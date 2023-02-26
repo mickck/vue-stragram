@@ -29,7 +29,13 @@
       <div class="modal-create-navbar">
         <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <span class="modal-create-font">Create new post</span>
-        <p @click="$store.commit('setNextStep', 2)">Next</p>
+        <p
+          @click="
+            $store.commit('setNextStep', { stepNumber: 1, image: imageUrl })
+          "
+        >
+          Next
+        </p>
       </div>
 
       <div class="modal-upload-wrapper" v-if="imageUrl">
@@ -95,6 +101,36 @@
         </div>
       </div>
     </div>
+
+    <!--Writing and Poasting -->
+    <div v-if="$store.state.step == 3" class="modal-card">
+      <div class="modal-filter-navbar">
+        <p @click="$store.commit('setNextStep', 2)">Back</p>
+        <span class="modal-create-font">Create new post</span>
+        <p @click="$store.commit('setPost', { filter, imageUrl, postText })">
+          Post
+        </p>
+      </div>
+
+      <div class="modal-filter-wrapper">
+        <img
+          class="modal-filter-image"
+          :class="`${filter}`"
+          :src="`${imageUrl}`"
+        />
+      </div>
+      <div class="write-box">
+        <textarea
+          class="write-box"
+          @input="
+            (e) => {
+              postText = e.target.value;
+            }
+          "
+          placeholder="Write a caption..."
+        ></textarea>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -105,6 +141,7 @@ export default {
     return {
       imageUrl: "",
       filter: "",
+      postText: "",
     };
   },
   methods: {
@@ -129,6 +166,7 @@ export default {
       console.log(this.filter);
     },
   },
+  watch: {},
 };
 </script>
 <style lang="scss">
@@ -243,6 +281,16 @@ export default {
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
 }
+.write-box {
+  border: none;
+  width: 90%;
+  height: 100px;
+  padding: 15px;
+  margin: auto;
+  display: block;
+  outline: none;
+  resize: none;
+}
 .input-display {
   display: none;
 }
@@ -261,6 +309,7 @@ export default {
 }
 .modal-filter-image {
   min-width: 390px;
+  max-height: 495px;
 }
 .filters {
   overflow-x: scroll;

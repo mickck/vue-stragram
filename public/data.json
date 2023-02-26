@@ -5,7 +5,7 @@
     "userImage": "https://picsum.photos/100/?image=18",
     "postImage": "https://picsum.photos/640/480/?image=100",
     "likes": 100,
-    "date": "30/12/22",
+    "date": "30/12/2022",
     "liked": false,
     "content": "Where is the most relaxing place you have been?",
     "filter": ""
@@ -14,11 +14,11 @@
     "id": 1,
     "name": "Sophie",
     "userImage": "https://picsum.photos/100/?image=123",
-    "postImage": "https://picsum.photos/640/480/?image=120",
+    "postImage": "https://picsum.photos/640/480/?image=122",
     "likes": 20,
-    "date": "12/02/23",
+    "date": "12/02/2023",
     "liked": false,
-    "content": "Using your magical powers, you conjure a sea monster to attack the Christopher Columbus expedition during their initial voyage across the Atlantic Ocean.",
+    "content": "Imagination is something that's so important.",
     "filter": ""
   },
   {
@@ -27,7 +27,7 @@
     "userImage": "https://picsum.photos/100/?image=12",
     "postImage": "https://picsum.photos/640/480/?image=130",
     "likes": 18,
-    "date": "12/02/23",
+    "date": "12/02/2023",
     "liked": false,
     "content": "It's gonna go great.",
     "filter": ""
