@@ -2,7 +2,7 @@
 
 This project was built with the Vue framework with Vuex for the Instagram clone. 
 
-### Add filters option when you create a post.
+- Add filters option when you create a post.
 
 ## Project setup
 ```
