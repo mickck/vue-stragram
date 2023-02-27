@@ -1,7 +1,7 @@
 # vue-stagram
 
  Instagram clone with the Vue framework and Vuex
-- Add filters option when you create a post.
+- Filter option included when creating a post. 
 
 ## Project setup
 ```
