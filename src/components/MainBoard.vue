@@ -93,8 +93,6 @@
           d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
-
-    
     </p>
   </div>
 </template>
@@ -209,7 +207,7 @@ export default {
   margin-left: 10px;
   color: #9ca3af;
 }
-.bottom-bar{
+.bottom-bar {
   display: none;
 }
 @media (max-width: 1000px) {
@@ -227,7 +225,7 @@ export default {
       display: none;
     }
   }
-  .bottom-bar{
+  .bottom-bar {
     position: fixed;
     display: block;
     display: flex;
@@ -236,17 +234,19 @@ export default {
     align-items: center;
     width: 100%;
     bottom: 0;
-    padding: 10px;
-    background-color: #dbdbdb;
+
+    background-color: #f3f3f3;
     svg {
-    height: 26px;
-    width: 26px;
-    margin-right: 10px;
-    font-weight: 600;  cursor: pointer;
-    &:hover {
-      color: #9ca3af;
+      height: 26px;
+      width: 26px;
+      margin-right: 10px;
+      font-weight: 600;
+      padding-top: 5px;
+      cursor: pointer;
+      &:hover {
+        color: #9ca3af;
+      }
     }
-  }
   }
 }
 @media (max-width: 500px) {
