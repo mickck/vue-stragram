@@ -309,7 +309,7 @@ export default {
 }
 .modal-filter-image {
   min-width: 390px;
-  max-height: 495px;
+  max-height: 390px;
 }
 .filters {
   overflow-x: scroll;
@@ -350,4 +350,8 @@ export default {
     width: 70%;
   }
 }
+
+ @media(max-height:1000px){
+  .modal-card {height: 90%;
+ }}
 </style>
