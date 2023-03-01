@@ -89,7 +89,9 @@ export default {
     }
   }
 }
-@media screen(max-width:400px) {
-  
+@media (max-width:400px) {
+  .left-bar-sitename {
+ 
+}
 }
 </style>
