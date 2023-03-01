@@ -349,6 +349,9 @@ export default {
   .modal-upload-image {
     width: 70%;
   }
+  .modal-filter-wrapper {
+  padding: 0;
+  }
 }
 
  @media(max-height:1000px){

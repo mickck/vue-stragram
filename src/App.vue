@@ -94,5 +94,7 @@ body {
   .slider-bar {
     // display: none;
   }
+  
 }
+
 </style>

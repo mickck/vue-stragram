@@ -89,9 +89,5 @@ export default {
     }
   }
 }
-@media (max-width:400px) {
-  .left-bar-sitename {
- 
-}
-}
+
 </style>

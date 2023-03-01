@@ -77,6 +77,26 @@
     </div>
   </div>
   <ModalCard />
+  <div class="bottom-bar">
+    <p class="bottom-bar-icons" @click="$store.commit('setNextStep', 1)">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+
+    
+    </p>
+  </div>
 </template>
 <script>
 import ModalCard from "./ModalBoard.vue";
@@ -189,6 +209,9 @@ export default {
   margin-left: 10px;
   color: #9ca3af;
 }
+.bottom-bar{
+  display: none;
+}
 @media (max-width: 1000px) {
   .slider {
     .vue-logo {
@@ -203,6 +226,27 @@ export default {
     h1 {
       display: none;
     }
+  }
+  .bottom-bar{
+    position: fixed;
+    display: block;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    background-color: #dbdbdb;
+    svg {
+    height: 26px;
+    width: 26px;
+    margin-right: 10px;
+    font-weight: 600;  cursor: pointer;
+    &:hover {
+      color: #9ca3af;
+    }
+  }
   }
 }
 @media (max-width: 500px) {
